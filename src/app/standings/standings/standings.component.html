@@ -1,0 +1,31 @@
+<app-home (countryEvent)="receiveCountry($event)" [activeCountryName]="selectCountry">
+</app-home>
+
+<table class="center" *ngIf="allStandings.length > 0">
+    <thead>
+        <tr>
+            <th *ngFor="let column of headers" class="align-space">
+                {{ column }}
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let standings of allStandings; let i = index">
+            <td>
+                {{ standings.rank }}
+            </td>
+            <td>
+                <img [src]="standings.team.logo" width="20" height="20" />
+            </td>
+            <td>
+                <a routerLink="/game-results/{{standings.team.id}}">{{ standings.team.name }}</a>
+            </td>
+            <td>{{ standings.all.played }}</td>
+            <td>{{ standings.all.win }}</td>
+            <td>{{ standings.all.draw }}</td>
+            <td>{{ standings.all.lose }}</td>
+            <td>{{ standings.goalsDiff }}</td>
+            <td>{{ standings.points }}</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,29 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    color: navy;
+    font-family: math;
+}
+
+button {
+    border: none;
+    background: none;
+    margin: 10px;
+}
+
+.nav-style {
+    justify-content: center;
+    display: flex;
+    list-style-type: none;
+    background: lightgrey;
+    border-radius: 20px;
+}
+
+li:hover {
+    background-color: lightsteelblue;
+}
+
+.active-link {
+    text-decoration: underline !important;
+    color: navy;
+}

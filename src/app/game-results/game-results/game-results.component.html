@@ -1,0 +1,17 @@
+<div class="container center align-container" *ngIf="fixturesData.length > 0">
+    <table class="table center">
+        <tbody>
+            <tr *ngFor="let fixture of fixturesData">
+                <td> <img [src]="fixture.teams.home.logo" width="20" height="20" /></td>
+                <td>{{ fixture.teams.home.name }}</td>
+                <td>{{ fixture.goals.home }} - {{ fixture.goals.away }}</td>
+                <td>{{ fixture.teams.away.name }}</td>
+                <td><img [src]="fixture.teams.away.logo" width="20" height="20" /></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button type="button" class="btn center" (click)="goBack()">{{ back }}</button>
+</div>
+
+<div *ngIf="fixturesData.length == 0">NO game-results found!</div>
